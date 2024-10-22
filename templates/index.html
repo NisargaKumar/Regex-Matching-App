@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matching Tool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1542598953-41310c43f54b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin: 1px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(30px);
+            padding: 20px;
+            width: 400px;
+            height: auto;
+            margin-top: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            display: block;
+        }
+        textarea, input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            resize: none;
+        }
+        textarea {
+            height: 60px;
+        }
+        textarea:focus, input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regex Matching Tool</h1>
+        <form action="/results" method="POST">
+            <label for="test_string">Test String:</label>
+            <textarea id="test_string" name="test_string" required></textarea>
+
+            <label for="regex">Regex Pattern:</label>
+            <input type="text" id="regex" name="regex" required>
+
+            <button type="submit">Find Matches</button>
+        </form>
+        <a href="/validate_email">Validate an Email Address</a>
+    </div>
+</body>
+</html>
